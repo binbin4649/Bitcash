@@ -69,6 +69,12 @@ class BitcashesController extends BitcashAppController {
   }
   
   public function cancel(){
+	  $user = $this->BcAuth->user();
+      if(!$user){
+		$this->setMessage('エラー: user error.', true);
+		$this->redirect(array('plugin'=>'members', 'controller'=>'mypages', 'action'=>'index'));
+	  }
+	  $this->Bitcash->beforeCancel($user['id']);
 	  
   }
 
