@@ -97,7 +97,7 @@ class Bitcash extends AppModel {
 			'order_id' => $mypage_id,
 			//'notify_url' => $siteUrl.'bitcash/bitcashes/thanks',
 			'notify_url' => 'none',
-			'return_url' => $siteUrl.'bitcash/bitcashes/thanks',
+			'return_url' => $siteUrl.'bitcash/bitcashes/thanks/',
 			'cancel_url' => $siteUrl.'bitcash/bitcashes/cancel'
 		);
 		$param = http_build_query($param, '', '&');
