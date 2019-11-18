@@ -12,6 +12,7 @@ class BitcashTest extends BaserTestCase {
     );
 
     public function setUp() {
+	    $this->resetEvent();
 	    Configure::write('MccPlugin.TEST_MODE', true);
         $this->Bitcash = ClassRegistry::init('Bitcash.Bitcash');
         parent::setUp();
@@ -64,6 +65,7 @@ class BitcashTest extends BaserTestCase {
     }
     
     public function testConfirmPay2(){
+	    
 	    $mypage_id = 1;
 	    $map['price'] = 1500;
 	    $Bitcash['Bitcash']['tran_id'] = 'testtest';
